@@ -1,213 +1,256 @@
-# 📈 Stock Price Prediction Using LSTM
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.12%2B-orange)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.22.0-red)
-![yfinance](https://img.shields.io/badge/yfinance-API-green)
-![License](https://img.shields.io/badge/License-MIT-yellow)
-![Render](https://img.shields.io/badge/Render-Deployment-lightgrey)
-![GitHub](https://img.shields.io/badge/GitHub-Repository-lightblue)
-
-A powerful stock price prediction system built with LSTM neural networks, featuring real-time data from yfinance, interactive model training, and comprehensive performance metrics through a user-friendly Streamlit interface.
-
-![Stock Price Prediction Demo](docs/images/demo.png)
-
-## ✨ Features
-
-- 🔍 **Real-time Data**: Fetches real-time stock data using yfinance
-- �📈 **Interactive Training**: Fine-tune model parameters through an intuitive interface
-- 🤖 **Advanced LSTM Architecture**: Multi-layer LSTM with dropout for robust predictions
-- 📊 **Comprehensive Metrics**: Track MSE, RMSE, MAE, and R² scores
-- 🎯 **Future Predictions**: Generate price predictions with confidence intervals
-- 📉 **Performance Tracking**: Monitor model performance over time
-- 📱 **Responsive UI**: User-friendly interface built with Streamlit
-
-## 🚀 Tech Stack
-
-| Technology | Purpose |
-|------------|---------|
-| Python | Core language |
-| TensorFlow | Deep learning framework |
-| Streamlit | Web interface |
-| yfinance | Stock data source |
-| Pandas | Data manipulation |
-| Matplotlib | Data visualization |
-| Scikit-learn | Model evaluation |
-| Docker | Containerization |
-| Render | Cloud hosting |
-
-## 🏗️ Architecture
-
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│                 │     │                 │     │                 │
-│  Web Interface  │────▶│  Data Fetching  │────▶│  Preprocessing  │
-│   (Streamlit)   │     │   (yfinance)    │     │                 │
-│                 │     │                 │     │                 │
-└─────────────────┘     └────────┬────────┘     └────────┬────────┘
-                                │                        │
-                                │                        ▼
-                                │             ┌─────────────────────┐
-                                │             │                     │
-                                │             │   LSTM Training     │
-                                │             │                     │
-                                │             └──────────┬──────────┘
-                                │                        │
-                                │                        ▼
-                                │             ┌─────────────────────┐
-                                │             │                     │
-                                │             │  Model Evaluation   │
-                                │             │                     │
-                                │             └──────────┬──────────┘
-                                ▼                        ▼
-                      ┌─────────────────────────────────────────────┐
-                      │                                             │
-                      │              Price Prediction               │
-                      │                                             │
-                      └─────────────────────────────────────────────┘
-```
-
-## 🔧 Installation
-
-### Prerequisites
-
-- Python 3.8 or higher
-- No API key required (yfinance is used)
-
-### Option 1: Using Setup Scripts (Recommended) 🚀
-
-1. Clone the repository:
-```bash
-git clone https://github.com/VisionExpo/Stock_price_prediction.git
-cd Stock_price_prediction
-```
-
-2. Run the setup script:
-
-For Windows:
-```bash
-setup_env.bat
-```
-
-For macOS/Linux:
-```bash
-chmod +x setup_env.sh
-./setup_env.sh
-```
-
-This script will:
-- 🔨 Create a virtual environment
-- ⚡ Activate the virtual environment
-- 📦 Install dependencies
-- 🔑 Create a .env file from the example if it doesn't exist
-
-3. No API keys are required for this project
-
-### Option 2: Manual Setup 🛠️
-
-1. Clone the repository:
-```bash
-git clone https://github.com/VisionExpo/Stock_price_prediction.git
-cd Stock_price_prediction
-```
-
-2. Create and activate a virtual environment:
-
-For Windows:
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-For macOS/Linux:
-```bash
-python -m venv venv
-source venv/bin/activate
-```
-
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-4. Set up your environment variables:
-```bash
-cp .env.example .env
-```
-No API keys are required for this project.
-
-## 🚀 Usage
-
-### Running the Application
-
-```bash
-streamlit run app.py
-```
-
-Then open http://localhost:8501 in your web browser.
-
-### 📊 Data Visualization Mode
-
-View historical stock data with interactive charts:
-- Price trends
-- Volume analysis
-- Moving averages
-- Technical indicators
-
-### 🧠 Model Training Mode
-
-Train custom LSTM models with:
-- Adjustable look-back periods
-- Customizable layer architecture
-- Hyperparameter tuning
-- Early stopping options
-
-### 🔮 Prediction Mode
-
-Generate and visualize predictions:
-- Short-term forecasts
-- Long-term trends
-- Confidence intervals
-- Downloadable prediction data
-
-### 📈 Performance Analysis
-
-Evaluate model performance with:
-- Error metrics (MSE, RMSE, MAE)
-- R² scores
-- Prediction vs. actual comparisons
-- Model version tracking
-
-## 🌐 Deployment
-
-This application can be deployed on Render. You can access it at: https://stock-price-prediction.onrender.com/
-
-For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
-
-## 🧪 Testing
-
-To run tests:
-
-```bash
-python -m pytest tests/
-```
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgements
-
-- TensorFlow team for the deep learning framework
-- Streamlit team for the web app framework
-- yfinance for providing stock data access
-- The open-source community for various libraries used in this project
-
-## 📞 Contact
-
-For questions or feedback, please open an issue on GitHub or contact the maintainer at gorulevishal984@gmail.com.
+# 📈 Finsight AI  
+## Intelligent Quantitative Trading & Research Engine
 
 <div align="center">
 
-Made with ❤️ by [Vishal Gorule](https://github.com/VisionExpo)
+![Version](https://img.shields.io/badge/version-1.0-blue?style=flat)
+![Status](https://img.shields.io/badge/status-active-success?style=flat)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat&logo=python&logoColor=white)
+![DeepLearning](https://img.shields.io/badge/Deep%20Learning-PyTorch-red?style=flat&logo=pytorch&logoColor=white)
+![Backend](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
+![Frontend](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
+![MLOps](https://img.shields.io/badge/MLOps-MLflow%20%7C%20DVC-orange?style=flat)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat&logo=docker&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat)
 
 </div>
+
+---
+
+## 📌 Overview
+
+**Finsight AI** is a **research-grade quantitative trading and portfolio intelligence platform** designed to bridge the gap between:
+
+> **financial theory → machine learning research → production-grade trading systems**
+
+Unlike traditional backtesting tools or signal generators, Finsight AI emphasizes **risk-first decision making, explainability, regime awareness, and reproducible research**, making it suitable for serious traders, quant researchers, and FinTech builders.
+
+---
+
+## 🎯 Why Finsight AI?
+
+### ❌ The Problem
+
+Most algorithmic trading platforms and GitHub projects:
+
+- Rely on **overfitted historical backtests**
+- Ignore **market regimes and tail risk**
+- Treat ML models as **black boxes**
+- Separate research notebooks from production systems
+- Break when moved beyond toy examples
+
+As a result, strategies appear profitable in theory — and fail in real market conditions.
+
+---
+
+### ✅ The Solution
+
+**Finsight AI** is built as a **system**, not a script.
+
+It introduces a modular, MLOps-enabled architecture that:
+
+- Detects **market regimes** before strategy deployment  
+- Combines **price action, sentiment, and macro signals**  
+- Enforces **realistic execution constraints**  
+- Tracks **data, experiments, and models** end-to-end  
+- Explains *why* decisions are made — not just *what*  
+
+> **Philosophy**  
+> *Returns are meaningless without risk awareness.*
+
+---
+
+## 🧠 System Architecture
+```
+Streamlit Frontend
+│
+├── Portfolio Builder
+├── Strategy Backtester
+├── Risk & Performance Dashboard
+│
+└── REST / WebSocket API
+↓
+FastAPI Backend (Async)
+│
+├── Data Layer
+│ ├── Market Data Ingestion
+│ ├── News & Sentiment Feeds
+│ └── Feature Engineering
+│
+├── Research Layer
+│ ├── Strategy Lab
+│ ├── Walk-Forward Validation
+│ └── Regime Detection
+│
+├── Model Layer
+│ ├── Time-Series Models
+│ ├── NLP Sentiment Models
+│ └── Portfolio Optimization
+│
+├── Execution Simulator
+│ ├── Slippage & Fees
+│ ├── Latency Modeling
+│ └── Risk Constraints
+│
+└── MLOps Layer
+├── MLflow (experiments & models)
+├── DVC (data versioning)
+└── Evidently AI (monitoring)
+```
+
+---
+
+## ✨ Core Capabilities
+
+### 📊 AI-Driven Portfolio Construction
+- Mean-Variance & Black–Litterman
+- Hierarchical Risk Parity (HRP)
+- CVaR & drawdown-constrained optimization
+
+### 🔁 Advanced Backtesting
+- Walk-forward analysis
+- Purged K-Fold cross-validation
+- Strategy stress testing
+
+### 🧠 Market Regime Detection
+- Volatility-based regimes
+- Trend vs mean-reversion detection
+- Strategy switching
+
+### 📰 NLP-Based Sentiment Intelligence
+- FinBERT-powered sentiment analysis
+- News-driven alpha signals
+
+### ⚠️ Risk-First Trading Logic
+- Volatility targeting
+- Max drawdown limits
+- Kill-switch simulation
+
+### 🔍 Explainable AI
+- Feature attribution
+- Risk contribution analysis
+- Transparent signal rationale
+
+---
+
+## 🛠️ Tech Stack
+
+### Core
+- Python 3.10+
+
+### AI / ML
+- PyTorch
+- Hugging Face Transformers
+- FinBERT
+- LSTM / Transformer / TFT models
+- Scikit-learn
+
+### Application
+- **Backend:** FastAPI, Uvicorn
+- **Frontend:** Streamlit, Plotly
+
+### MLOps & DevOps
+- Docker & Docker Compose
+- MLflow
+- DVC
+- Evidently AI
+
+---
+
+## 📂 Project Structure
+```
+finsight/
+├── backend/
+│ ├── app/
+│ │ ├── api/
+│ │ ├── core/
+│ │ ├── models/
+│ │ └── services/
+│ ├── Dockerfile
+│ └── requirements.txt
+│
+├── frontend/
+│ ├── app/
+│ │ ├── pages/
+│ │ └── utils/
+│ ├── Dockerfile
+│ └── requirements.txt
+│
+├── ml_pipeline/
+│ ├── experiments/
+│ └── dvc.yaml
+│
+├── docker-compose.yml
+└── README.md
+```
+
+---
+
+## 💻 Installation
+
+### Clone Repository
+```bash
+git clone https://github.com/your-username/finsight-ai.git
+cd finsight-ai
+```
+
+### Environment Variables
+Create .env:
+```bash
+PROJECT_NAME=Finsight
+API_V1_STR=/api/v1
+MLFLOW_TRACKING_URI=http://tracking_server:5000
+```
+
+### ▶️ Run Locally
+```bash
+docker-compose up --build
+```
+### Access
+- Dashboard: http://localhost:8501
+
+- API Docs: http://localhost:8000/docs
+
+- MLflow: http://localhost:5000
+
+## 🎮 Hardware & Performance
+
+| Component | Spec           |
+| --------- | -------------- |
+| GPU       | RTX 4060 (8GB) |
+| RAM       | 24 GB          |
+| CPU       | i7 / Ryzen     |
+
+> Optimized for consumer GPUs using quantization and batching.
+
+## 🧪 Research Techniques Used
+
+- Regime-aware modeling
+- Walk-forward validation
+- Multi-factor alpha
+- NLP-based sentiment signals
+- Risk parity optimization
+- MLOps-driven experimentation
+
+## 🗺️ Roadmap
+
+- [ ] Real-time data ingestion
+- [ ] Multi-modal alpha models
+- [ ] Reinforcement learning for position sizing
+- [ ] Paper trading environment
+- [ ] Multi-portfolio support
+
+## 🎯 Vision
+Finsight AI aims to become an open quantitative research OS for building transparent, risk-aware trading systems grounded in financial reality.
+
+## 🤝 Contributing
+Contributions are welcome from researchers, traders, and engineers interested in:
+
+- Quantitative finance
+- Time-series ML
+- Risk engineering
+- MLOps systems
+
+## 📜 License
+MIT License
+
