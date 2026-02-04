@@ -1,16 +1,17 @@
-# 📈 Finsight AI  
-## Intelligent Quantitative Trading & Research Engine
+# 📈 ArthaQuant
+
+## Multimodal AI Trading Intelligence & Paper-Trading Research Platform
 
 <div align="center">
 
 ![Version](https://img.shields.io/badge/version-1.0-blue?style=flat)
 ![Status](https://img.shields.io/badge/status-active-success?style=flat)
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat&logo=python&logoColor=white)
-![DeepLearning](https://img.shields.io/badge/Deep%20Learning-PyTorch-red?style=flat&logo=pytorch&logoColor=white)
-![Backend](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
-![Frontend](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
-![MLOps](https://img.shields.io/badge/MLOps-MLflow%20%7C%20DVC-orange?style=flat)
-![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat&logo=docker&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat\&logo=python\&logoColor=white)
+![DeepLearning](https://img.shields.io/badge/Deep%20Learning-PyTorch-red?style=flat\&logo=pytorch\&logoColor=white)
+![Backend](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat\&logo=fastapi\&logoColor=white)
+![Frontend](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?style=flat\&logo=streamlit\&logoColor=white)
+![MLOps](https://img.shields.io/badge/MLOps-W%26B%20%7C%20DVC-orange?style=flat)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat\&logo=docker\&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat)
 
 </div>
@@ -19,238 +20,329 @@
 
 ## 📌 Overview
 
-**Finsight AI** is a **research-grade quantitative trading and portfolio intelligence platform** designed to bridge the gap between:
+**ArthaQuant** is a **research-grade, production-oriented AI trading intelligence platform** designed to demonstrate how **modern quantitative trading systems are architected, evaluated, and monitored** — *safely*, using **paper trading only**.
 
-> **financial theory → machine learning research → production-grade trading systems**
+It bridges the gap between:
 
-Unlike traditional backtesting tools or signal generators, Finsight AI emphasizes **risk-first decision making, explainability, regime awareness, and reproducible research**, making it suitable for serious traders, quant researchers, and FinTech builders.
+> **financial intuition → multimodal machine learning → production-grade AI systems**
+
+Unlike traditional trading bots or notebook-based backtests, ArthaQuant focuses on **system behavior**, **risk awareness**, **model accountability**, and **end-to-end MLOps discipline**.
+
+> ⚠️ ArthaQuant does **not** execute real trades and does **not** provide financial advice.
 
 ---
 
-## 🎯 Why Finsight AI?
+## 🎯 Why ArthaQuant?
 
 ### ❌ The Problem
 
-Most algorithmic trading platforms and GitHub projects:
+Most algorithmic trading projects and platforms:
 
-- Rely on **overfitted historical backtests**
-- Ignore **market regimes and tail risk**
-- Treat ML models as **black boxes**
-- Separate research notebooks from production systems
-- Break when moved beyond toy examples
+* Optimize for **historical backtest performance**
+* Ignore **distribution shift and regime change**
+* Treat ML models as **static black boxes**
+* Separate research code from production systems
+* Lack observability once deployed
 
-As a result, strategies appear profitable in theory — and fail in real market conditions.
+As a result, models appear strong in isolation — and silently fail in real-world conditions.
 
 ---
 
-### ✅ The Solution
+### ✅ The Philosophy
 
-**Finsight AI** is built as a **system**, not a script.
+**ArthaQuant is built as a system, not a strategy.**
 
-It introduces a modular, MLOps-enabled architecture that:
+It emphasizes:
 
-- Detects **market regimes** before strategy deployment  
-- Combines **price action, sentiment, and macro signals**  
-- Enforces **realistic execution constraints**  
-- Tracks **data, experiments, and models** end-to-end  
-- Explains *why* decisions are made — not just *what*  
+* **Multimodal intelligence** (price + news sentiment)
+* **Probabilistic decision making** (confidence & uncertainty)
+* **Realistic execution simulation** (paper trading)
+* **Continuous monitoring & drift detection**
+* **Auditable, reproducible ML pipelines**
 
-> **Philosophy**  
-> *Returns are meaningless without risk awareness.*
+> **Core belief**
+> *Predictions are meaningless without accountability and risk context.*
 
 ---
 
 ## 🧠 System Architecture
+
 ```
-Streamlit Frontend
+Streamlit Dashboard
 │
-├── Portfolio Builder
-├── Strategy Backtester
-├── Risk & Performance Dashboard
+├── Predictions & Signals
+├── Paper Trading
+├── Portfolio & Risk Analytics
+├── Drift Monitoring
 │
-└── REST / WebSocket API
+└── REST API (FastAPI)
 ↓
-FastAPI Backend (Async)
+Backend Services
 │
-├── Data Layer
-│ ├── Market Data Ingestion
-│ ├── News & Sentiment Feeds
-│ └── Feature Engineering
+├── Inference Layer
+│ ├── Market Transformer
+│ ├── FinBERT Sentiment Encoder
+│ └── Cross-Attention Fusion Model
 │
-├── Research Layer
-│ ├── Strategy Lab
-│ ├── Walk-Forward Validation
-│ └── Regime Detection
-│
-├── Model Layer
-│ ├── Time-Series Models
-│ ├── NLP Sentiment Models
-│ └── Portfolio Optimization
-│
-├── Execution Simulator
-│ ├── Slippage & Fees
-│ ├── Latency Modeling
+├── Execution Layer
+│ ├── Paper Trading Engine
+│ ├── Portfolio State Manager
 │ └── Risk Constraints
 │
-└── MLOps Layer
-├── MLflow (experiments & models)
-├── DVC (data versioning)
-└── Evidently AI (monitoring)
+├── Analytics Layer
+│ ├── Equity Curve
+│ ├── Sharpe & Drawdown
+│ └── Performance Reports
+│
+├── Monitoring Layer
+│ ├── Drift Detection (KS-test)
+│ └── Retraining Triggers
+│
+└── MLOps & Infra
+    ├── Weights & Biases (experiments & artifacts)
+    ├── DVC (data & model versioning)
+    ├── Audit Logs (decision traceability)
+    └── Docker / CI
 ```
 
 ---
 
-## ✨ Core Capabilities
+## 🧬 Machine Learning Design
 
-### 📊 AI-Driven Portfolio Construction
-- Mean-Variance & Black–Litterman
-- Hierarchical Risk Parity (HRP)
-- CVaR & drawdown-constrained optimization
+### 📈 Market Intelligence (Price Model)
 
-### 🔁 Advanced Backtesting
-- Walk-forward analysis
-- Purged K-Fold cross-validation
-- Strategy stress testing
+* Transformer-based time-series model
+* Learns temporal dependencies in OHLCV + indicators
+* Outputs:
 
-### 🧠 Market Regime Detection
-- Volatility-based regimes
-- Trend vs mean-reversion detection
-- Strategy switching
+  * Probability of upward movement
+  * Expected return
+  * Uncertainty estimate
 
-### 📰 NLP-Based Sentiment Intelligence
-- FinBERT-powered sentiment analysis
-- News-driven alpha signals
+---
 
-### ⚠️ Risk-First Trading Logic
-- Volatility targeting
-- Max drawdown limits
-- Kill-switch simulation
+### 📰 Event Intelligence (Sentiment Model)
 
-### 🔍 Explainable AI
-- Feature attribution
-- Risk contribution analysis
-- Transparent signal rationale
+* FinBERT (financial domain-specific NLP)
+* Processes news and textual signals
+* Produces dense semantic embeddings (not naive labels)
+
+---
+
+### 🔗 Multimodal Fusion (Core Alpha)
+
+* **Cross-attention architecture**
+* Price embeddings act as **queries**
+* Sentiment embeddings act as **context**
+* Avoids naive feature concatenation
+* Aligns with current multimodal financial ML research
+
+---
+
+## 📊 Trading Logic (Paper Trading Only)
+
+ArthaQuant uses **probabilistic execution**, not rule-based BUY/SELL signals.
+
+```
+If P(up) > threshold and uncertainty < limit:
+    Execute BUY (paper)
+Else if P(down) > threshold:
+    Execute SELL (paper)
+Else:
+    HOLD
+```
+
+Includes:
+
+* Capital-aware position sizing
+* Slippage & transaction cost simulation
+* Cool-down and exposure constraints
+
+📌 No real money. No broker integration.
+
+---
+
+## 💼 Paper Trading Engine
+
+* Simulates realistic order execution
+* Shared logic between:
+
+  * Backtesting
+  * Live paper trading
+* Deterministic and replayable
+* Portfolio tracks:
+
+  * Cash
+  * Positions
+  * Trade history
+  * PnL
+
+---
+
+## 📉 Portfolio Analytics
+
+Risk-aware evaluation using:
+
+* Equity curve
+* Sharpe ratio
+* Maximum drawdown
+* Total return
+
+Focus is on **risk behavior**, not profit claims.
+
+---
+
+## 🚨 Drift Detection & Model Health
+
+ArthaQuant continuously monitors:
+
+* Prediction distributions
+* Confidence decay
+* Regime shifts
+
+Uses **statistical drift detection (KS-test)**.
+
+Drift does **not** immediately redeploy models.
+Instead, it triggers:
+
+1. Evaluation
+2. Controlled retraining
+3. Validation
+4. Gated model promotion
+
+---
+
+## 🔁 Automated Retraining (Safe & Auditable)
+
+* Drift → retraining pipeline
+* Retraining is:
+
+  * Asynchronous
+  * Versioned
+  * Fully tracked
+* Models are promoted **only if they outperform baselines**
+
+This prevents silent degradation.
+
+---
+
+## 🧾 Audit Logs & Observability
+
+Every critical event is logged:
+
+* Predictions
+* Paper trades
+* Drift detection
+* Retraining triggers
+
+Audit logs are:
+
+* Append-only
+* Time-stamped
+* Model-version aware
+
+This enables **full decision traceability**.
+
+---
+
+## 🖥️ Dashboard (Streamlit)
+
+Interactive UI for:
+
+* Predictions
+* Paper trading
+* Portfolio state
+* Risk analytics
+* Drift monitoring
+
+The frontend contains **no business logic** — it consumes APIs only.
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Core
-- Python 3.10+
+
+* Python 3.10+
 
 ### AI / ML
-- PyTorch
-- Hugging Face Transformers
-- FinBERT
-- LSTM / Transformer / TFT models
-- Scikit-learn
+
+* PyTorch
+* Hugging Face Transformers
+* FinBERT
+* Transformer-based time-series models
 
 ### Application
-- **Backend:** FastAPI, Uvicorn
-- **Frontend:** Streamlit, Plotly
 
-### MLOps & DevOps
-- Docker & Docker Compose
-- MLflow
-- DVC
-- Evidently AI
+* **Backend:** FastAPI, Uvicorn
+* **Frontend:** Streamlit, Plotly
 
----
+### MLOps & Infra
 
-## 📂 Project Structure
-```
-finsight/
-├── backend/
-│ ├── app/
-│ │ ├── api/
-│ │ ├── core/
-│ │ ├── models/
-│ │ └── services/
-│ ├── Dockerfile
-│ └── requirements.txt
-│
-├── frontend/
-│ ├── app/
-│ │ ├── pages/
-│ │ └── utils/
-│ ├── Dockerfile
-│ └── requirements.txt
-│
-├── ml_pipeline/
-│ ├── experiments/
-│ └── dvc.yaml
-│
-├── docker-compose.yml
-└── README.md
-```
+* Weights & Biases (experiments & artifacts)
+* DVC (data & model versioning)
+* Docker & Docker Compose
+* Redis (infra support)
 
 ---
 
-## 💻 Installation
+## 🔐 Safety, Ethics & Scope
 
-### Clone Repository
-```bash
-git clone https://github.com/your-username/finsight-ai.git
-cd finsight-ai
-```
+* ✅ Paper trading only
+* ❌ No real capital
+* ❌ No broker integration
+* ❌ No investment advice
+* ❌ No profit guarantees
+* ✅ Transparent evaluation
+* ✅ Full auditability
 
-### Environment Variables
-Create .env:
-```bash
-PROJECT_NAME=Finsight
-API_V1_STR=/api/v1
-MLFLOW_TRACKING_URI=http://tracking_server:5000
-```
+ArthaQuant is designed for **education, research, and system demonstration**.
 
-### ▶️ Run Locally
-```bash
-docker-compose up --build
-```
-### Access
-- Dashboard: http://localhost:8501
+---
 
-- API Docs: http://localhost:8000/docs
+## 🗺️ Roadmap (Conservative by Design)
 
-- MLflow: http://localhost:5000
+* Stress testing under extreme regimes
+* Explainability research
+* Robustness benchmarking
 
-## 🎮 Hardware & Performance
+Not planned:
 
-| Component | Spec           |
-| --------- | -------------- |
-| GPU       | RTX 4060 (8GB) |
-| RAM       | 24 GB          |
-| CPU       | i7 / Ryzen     |
+* Live trading
+* Broker APIs
+* Retail financial advice
 
-> Optimized for consumer GPUs using quantization and batching.
+---
 
-## 🧪 Research Techniques Used
+## 👤 Who This Is For
 
-- Regime-aware modeling
-- Walk-forward validation
-- Multi-factor alpha
-- NLP-based sentiment signals
-- Risk parity optimization
-- MLOps-driven experimentation
+* Recruiters evaluating **senior ML / AI engineers**
+* Investors assessing **technical depth**
+* Engineers interested in **real MLOps systems**
+* Researchers exploring **multimodal financial ML**
 
-## 🗺️ Roadmap
+---
 
-- [ ] Real-time data ingestion
-- [ ] Multi-modal alpha models
-- [ ] Reinforcement learning for position sizing
-- [ ] Paper trading environment
-- [ ] Multi-portfolio support
+## 🏁 Final Note
 
-## 🎯 Vision
-Finsight AI aims to become an open quantitative research OS for building transparent, risk-aware trading systems grounded in financial reality.
+ArthaQuant is not about “beating the market”.
 
-## 🤝 Contributing
-Contributions are welcome from researchers, traders, and engineers interested in:
+It is about demonstrating:
 
-- Quantitative finance
-- Time-series ML
-- Risk engineering
-- MLOps systems
+* How **real AI systems** are built
+* How risk is managed
+* How models are monitored
+* How engineering discipline meets research
+
+That is the real differentiator.
+
+---
 
 ## 📜 License
-MIT License
 
+MIT License
+> If you like this project, ⭐ star the repo and join the journey.
+
+<div align="center">
+<sub>Built with ❤️ by Vishal Gorule</sub>
+</div>
