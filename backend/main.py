@@ -4,6 +4,7 @@ from backend.api import analytics
 from backend.api import drift
 from backend.api import auth, user_portfolio
 from backend.api import health
+from backend.api import retrain
 
 app = FastAPI(title="ArthaQuant API")
 
@@ -15,3 +16,5 @@ app.include_router(drift.router)
 app.include_router(auth.router)
 app.include_router(user_portfolio.router)
 app.include_router(health.router)
+app.include_router(retrain.router)
+
