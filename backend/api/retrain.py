@@ -1,26 +1,24 @@
-from fastapi import APIRouter
-from datetime import datetime
-
-from backend.services.drift_retrain_bridge import DriftRetrainBridge
-
-router = APIRouter(prefix="/retrain", tags=["retrain"])
-
-bridge = DriftRetrainBridge()
-
+from backend.services.audit_logger import AuditLogger
+from backend.db.session import SessionLocal
 
 @router.post("")
-def retrain(
-    reference: list[float],
-    current: list[float],
-    model_name: str = "fusion_model",
-):
+def retrain(reference: list[float], current: list[float], model_name: str):
+    db = SessionLocal()
+    audit = AuditLogger(db)
+
     job = bridge.evaluate_and_trigger(
         reference=reference,
         current=current,
         model_name=model_name,
     )
 
-    if job:
-        return {"status": "retraining_triggered", "job": job}
+    audit.log(
+        event_type="retrain",
+        payload={
+            "model": model_name,
+            "triggered": bool(job),
+        },
+    )
 
-    return {"status": "no_retraining_needed"}
+    db.close()
+    return {"status": "logged"}

@@ -1,20 +1,11 @@
-from fastapi import APIRouter, HTTPException
-
-from backend.schemas.paper_trade import PaperTradeRequest
-from backend.schemas.trading import TradeSignal
-from backend.services.execution import PaperExecutionEngine
-from backend.services.portfolio import Portfolio
-
-router = APIRouter(prefix="/paper", tags=["paper-trading"])
-
-# In-memory portfolio (MVP)
-portfolio = Portfolio(initial_cash=1_000_000)
-
-execution_engine = PaperExecutionEngine()
-
+from backend.services.audit_logger import AuditLogger
+from backend.db.session import SessionLocal
 
 @router.post("/trade")
 def paper_trade(req: PaperTradeRequest):
+    db = SessionLocal()
+    audit = AuditLogger(db)
+
     signal = TradeSignal(
         symbol=req.symbol,
         p_up=req.p_up,
@@ -31,14 +22,19 @@ def paper_trade(req: PaperTradeRequest):
 
     if trade:
         portfolio.apply_trade(trade)
-        return {
-            "status": "executed",
-            "trade": trade.dict(),
-            "cash": portfolio.cash,
-            "positions": portfolio.positions,
-        }
 
-    return {
-        "status": "no_trade",
-        "reason": "signal did not meet execution criteria",
-    }
+        audit.log(
+            event_type="trade",
+            payload={
+                "symbol": trade.symbol,
+                "side": trade.side,
+                "quantity": trade.quantity,
+                "price": trade.price,
+            },
+        )
+
+        db.close()
+        return {"status": "executed", "trade": trade.dict()}
+
+    db.close()
+    return {"status": "no_trade"}
