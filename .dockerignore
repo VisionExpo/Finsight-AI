@@ -1,25 +1,9 @@
-# Ignore Git and DVC's internal folders
-.git/
-.dvc/
-
-# Ignore Python's virtual environment and cache
-.venv/
-venv/
 __pycache__/
-
-# Ignore IDE and OS specific files
-.vscode/
-.idea/
-*.DS_Store
-
-# --- CRITICAL: Ignore all large data, models, and logs ---
-data/
-models/
-reports/
-mlflow_data/
-notebooks/
-
-# Ignore specific files
-.env
-.dockerignore
+.git/
 .gitignore
+.env
+data/
+notebooks/
+wandb/
+*.pt
+*.joblib
