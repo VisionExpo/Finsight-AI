@@ -13,3 +13,8 @@ wandb
 
 plotly
 streamlit
+sqlalchemy
+passlib[bcrypt]
+python-jose
+redis
+scipy

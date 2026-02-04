@@ -7,7 +7,12 @@ services:
       dockerfile: infra/Dockerfile
     ports:
       - "8000:8000"
-    volumes:
-      - ../:/app
-    environment:
-      - ENV=dev
+    env_file:
+      - .env
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
